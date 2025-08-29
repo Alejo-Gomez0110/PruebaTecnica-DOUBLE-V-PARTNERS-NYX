@@ -1,0 +1,14 @@
+{
+  "name": "playwright-opencart-e2e",
+  "version": "1.0.0",
+  "description": "E2E tests for OpenCart demo store using Playwright + POM",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report",
+    "install:playwright": "npx playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.35.0"
+  }
+}
