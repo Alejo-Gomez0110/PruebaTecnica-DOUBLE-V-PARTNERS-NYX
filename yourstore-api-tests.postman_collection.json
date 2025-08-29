@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "fa6693d6-6e9f-4a74-b32d-f02a86e17a5b",
+		"name": "yourstore-api-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6087356"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get all products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/products')\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products (Electronics)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/products')\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/products/category/electronics"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 21,\r\n  \"title\": \"Monitor Janus 24 Pulgadas Ips 100hz Hdmi / Vga Full Hd Negro\",\r\n  \"price\": 108.27,\r\n  \"description\": \"MONITOR DE 24 marca Janus, Conectividad: 1 VGA, 1 HDMI, 1 Audio In + speaker, Tipo de panel: IPS plano, Brillo: 250md/s², Contraste: 1000:1, Profundidad de color: 16.7M,Consumo de energía: ≤20w, Freesync/G-Sync, Resolución: 1920x1080p,Relación De Aspecto: Pantalla ancha 16: 9, Tasa de refresco:   100Hz, Potencia Parlantes: 3W X 2, Montaje VESA 75*75mm, La caja contiene: Cable DP, adaptador, base de desmontaje rápido, manual del usuario,Garantía: 36 Meses\",\r\n  \"category\": \"electronics\",\r\n  \"image\": \"http://example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single product",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/products/1')\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/products/14"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 21,\r\n  \"title\": \"Monitor Janus 24 Pulgadas Ips 100hz Hdmi / Vga Full Hd Negro\",\r\n  \"price\": 108.27,\r\n  \"description\": \"MONITOR DE 24 marca Janus, Conectividad: 1 VGA, 1 HDMI, 1 Audio In + speaker, Tipo de panel: IPS plano, Brillo: 250md/s², Contraste: 1000:1, Profundidad de color: 16.7M,Consumo de energía: ≤20w, Freesync/G-Sync, Resolución: 1920x1080p,Relación De Aspecto: Pantalla ancha 16: 9, Tasa de refresco:   100Hz, Potencia Parlantes: 3W X 2, Montaje VESA 75*75mm, La caja contiene: Cable DP, adaptador, base de desmontaje rápido, manual del usuario,Garantía: 36 Meses\",\r\n  \"category\": \"electronics\"\r\n  \"image\": \"https://www.janus.com.co/cdn/shop/files/Monitor24_940x.jpg?v=1753392098\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/products/21"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/products/1', {\r\n  method: 'DELETE'\r\n})\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/products/{id}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Get all carts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"[\r",
+									"  {\r",
+									"    \"id\": 0,\r",
+									"    \"userId\": 0,\r",
+									"    \"products\": [\r",
+									"      {\r",
+									"        \"id\": 0,\r",
+									"        \"title\": \"string\",\r",
+									"        \"price\": 0.1,\r",
+									"        \"description\": \"string\",\r",
+									"        \"category\": \"string\",\r",
+									"        \"image\": \"http://example.com\"\r",
+									"      }\r",
+									"    ]\r",
+									"  }\r",
+									"]"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/carts')\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/carts"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{\r",
+									"  \"id\": 0,\r",
+									"  \"userId\": 0,\r",
+									"  \"products\": [\r",
+									"    {\r",
+									"      \"id\": 0,\r",
+									"      \"title\": \"string\",\r",
+									"      \"price\": 0.1,\r",
+									"      \"description\": \"string\",\r",
+									"      \"category\": \"string\",\r",
+									"      \"image\": \"http://example.com\"\r",
+									"    }\r",
+									"  ]\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"userId\": 0,\r\n  \"products\": [\r\n    {\r\n      \"id\": 0,\r\n      \"title\": \"string\",\r\n      \"price\": 0.1,\r\n      \"description\": \"string\",\r\n      \"category\": \"string\",\r\n      \"image\": \"http://example.com\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{\r",
+									"  \"id\": 0,\r",
+									"  \"userId\": 0,\r",
+									"  \"products\": [\r",
+									"    {\r",
+									"      \"id\": 0,\r",
+									"      \"title\": \"string\",\r",
+									"      \"price\": 0.1,\r",
+									"      \"description\": \"string\",\r",
+									"      \"category\": \"string\",\r",
+									"      \"image\": \"http://example.com\"\r",
+									"    }\r",
+									"  ]\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/carts/1')\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/carts/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{\r",
+									"  \"id\": 0,\r",
+									"  \"userId\": 0,\r",
+									"  \"products\": [\r",
+									"    {\r",
+									"      \"id\": 0,\r",
+									"      \"title\": \"string\",\r",
+									"      \"price\": 0.1,\r",
+									"      \"description\": \"string\",\r",
+									"      \"category\": \"string\",\r",
+									"      \"image\": \"http://example.com\"\r",
+									"    }\r",
+									"  ]\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"userId\": 0,\r\n  \"products\": [\r\n    {\r\n      \"id\": 0,\r\n      \"title\": \"string\",\r\n      \"price\": 0.1,\r\n      \"description\": \"string\",\r\n      \"category\": \"string\",\r\n      \"image\": \"http://example.com\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/carts/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/carts/1', {\r\n  method: 'DELETE'\r\n})\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/carts/{id}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"[\r",
+									"  {\r",
+									"    \"id\": 0,\r",
+									"    \"username\": \"string\",\r",
+									"    \"email\": \"string\",\r",
+									"    \"password\": \"string\"\r",
+									"  }\r",
+									"]"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/users')\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an object with id property\", function () {\r",
+									"  pm.expect(pm.response.json()).to.be.an('object').that.has.property('id');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"string\",\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{\r",
+									"  \"id\": 0,\r",
+									"  \"username\": \"string\",\r",
+									"  \"email\": \"string\",\r",
+									"  \"password\": \"string\"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/users/1')\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/users/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{\r",
+									"  \"id\": 0,\r",
+									"  \"username\": \"string\",\r",
+									"  \"email\": \"string\",\r",
+									"  \"password\": \"string\"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"string\",\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/users/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "fetch('https://fakestoreapi.com/users/1', {\r\n  method: 'DELETE'\r\n})\r\n  .then(response => response.json())\r\n  .then(data => console.log(data));",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": "{{baseURL}}/users/{id}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{\r",
+									"  \"token\": \"string\"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/auth/login"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://fakestoreapi.com"
+		}
+	]
+}
